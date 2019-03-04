@@ -1,10 +1,8 @@
 buildscript {
     repositories {
         jcenter()
-        maven {
-            name = "DimDev"
-            url = "https://www.dimdev.org/maven/"
-        }
+        maven { url 'https://www.jitpack.io' }
+		maven { url 'https://files.minecraftforge.net/maven' }
         maven {
             name = "Forge"
             url = "http://files.minecraftforge.net/maven"
@@ -15,7 +13,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'org.dimdev:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'com.github.Chocohead:ForgeGradle:moderniser-SNAPSHOT'
         classpath 'com.matthewprenger:CurseGradle:1.0-SNAPSHOT'
     }
 }
@@ -57,10 +55,9 @@ repositories {
     mavenCentral()
     mavenLocal()
 
-    maven {
-        name = "DimDev"
-        url = "https://www.dimdev.org/maven/"
-    }
+    maven { url 'https://www.dimdev.org/maven/' }
+	maven { url 'https://www.jitpack.io' }
+	maven { url 'http://repo.strezz.org/artifactory/list/Strezz-Central' }
 
     maven {
         name = "CurseForge"
@@ -75,12 +72,12 @@ repositories {
 
 dependencies {
 
-    implementation "org.dimdev:rift:${rift_version}:dev"
+    implementation 'com.github.Chocohead:Rift:jitpack-SNAPSHOT:dev'
 }
 
 minecraft {
-    version = project.mc_version
-    mappings = project.mc_mappings
+    version = '1.13.2'
+	mappings = 'snapshot_20181130'
     if("${mappings}" != "${project.ext.mappings}" && "${mappings}".startsWith("snapshot_")) {
         println(String.format("You are on old mappings, latest mappings are %s (you are on %s)", project.ext.mappings, mappings))
     }
