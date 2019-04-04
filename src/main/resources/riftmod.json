@@ -2,7 +2,7 @@
     "id": "gm_fix",
     "name": "Gamemode Fix",
     "authors": [
-        "UpcraftLP"
+        "UpcraftLP", "HyperSpeeed"
     ],
     "listeners": [
         "com.github.upcraftlp.gmfix.GamemodeFix"
